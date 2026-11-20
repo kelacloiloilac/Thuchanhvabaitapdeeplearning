@@ -1,0 +1,11 @@
+{
+  "device": "cpu",
+  "seed": 42,
+  "n_folds": 5,
+  "features_after_encoding": 242,
+  "mean_fold_valid_rmse_log": 0.15819548061918814,
+  "std_fold_valid_rmse_log": 0.01926032581605006,
+  "oof_rmse_log": 0.15935548740606664,
+  "oof_mae_log": 0.11224578731835133,
+  "submission_rows": 1459
+}

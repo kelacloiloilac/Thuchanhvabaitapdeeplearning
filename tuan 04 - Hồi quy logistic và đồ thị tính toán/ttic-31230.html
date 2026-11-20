@@ -1,0 +1,486 @@
+﻿<html data-qb-installed="true"><head>
+<link rel="icon" data-savepage-href="https://mcallester.github.io/favicon.ico" href=""><style>
+  .imageye-selected {
+    outline: 2px solid black !important;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.5) !important;
+  }
+</style>
+<style id="savepage-cssvariables">
+  :root {
+  }
+</style>
+<script id="savepage-shadowloader" type="text/javascript">
+  "use strict";
+  window.addEventListener("DOMContentLoaded",
+  function(event) {
+    savepage_ShadowLoader(5);
+  },false);
+  function savepage_ShadowLoader(c){createShadowDOMs(0,document.documentElement);function createShadowDOMs(a,b){var i;if(b.localName=="iframe"||b.localName=="frame"){if(a<c){try{if(b.contentDocument.documentElement!=null){createShadowDOMs(a+1,b.contentDocument.documentElement)}}catch(e){}}}else{if(b.children.length>=1&&b.children[0].localName=="template"&&b.children[0].hasAttribute("data-savepage-shadowroot")){b.attachShadow({mode:"open"}).appendChild(b.children[0].content);b.removeChild(b.children[0]);for(i=0;i<b.shadowRoot.children.length;i++)if(b.shadowRoot.children[i]!=null)createShadowDOMs(a,b.shadowRoot.children[i])}for(i=0;i<b.children.length;i++)if(b.children[i]!=null)createShadowDOMs(a,b.children[i])}}}
+</script>
+<meta name="savepage-url" content="https://mcallester.github.io/ttic-31230/">
+<meta name="savepage-title" content="">
+<meta name="savepage-pubdate" content="Unknown">
+<meta name="savepage-from" content="https://mcallester.github.io/ttic-31230/">
+<meta name="savepage-date" content="Thu Oct 08 2026 12:47:02 GMT+0700 (Indochina Time)">
+<meta name="savepage-state" content="Standard Items; Retain cross-origin frames; Merge CSS images; Remove unsaved URLs; Load lazy images in existing content; Max frame depth = 5; Max resource size = 50MB; Max resource time = 10s;">
+<meta name="savepage-version" content="33.9">
+<meta name="savepage-comments" content="">
+  </head><body data-new-gr-c-s-check-loaded="14.1335.0" data-gr-ext-installed=""><header>TTIC 31230: Fundamentals of Deep Learning</header>
+
+<p>Lectures: David McAllester (mcallester@ttic.edu)</p>
+
+<p>This class is intended to provide students with an understanding of the technical content of current
+  research in deep learning. Students successfully completing the class should be able to read and understand
+  current deep learning research papers and posses the technical knowledge necessary to both reproduce
+  research results and to do original research in deep learning.  The course covers current methods in computer vision,
+  natural language processing and reinforcement learning for games and robotics. One of the
+  amazing aspects of deep learning is that much the conceptual knowledge needed for research in these areas is shared
+  among the areas making such broad coverage possible. </p>
+
+<p> <b> Prerequisites: </b>  This class assumes vector calculus, basic linear algebra (matrices, eigenvectors, eigenvalues), and a strong command of probability theory
+  (multivariate Gaussians, covariance matrices, central limit theorem, Markov chains, and stationary distributions). Information theory is covered and not assumed but
+  prior familiarity with information theory is helpful. The course is overall quite mathemtical
+  and general mathematical maturity is required.
+  There are also machine problems and a class programming project and previous familiarity with programming, and
+  Python in particular, is advised.
+
+</p><ol>
+  
+  <li> <b> Introduction:</b>
+    
+    <p> <table>
+	<tbody><tr> <td width="300" align="left" style="padding:10pt">A Timeline of Deep Leaning focusing on when and where current methods were introduced.</td>
+	  <td align="left" style="padding:10pt"> <a data-savepage-href="01intro/history.pdf" href="https://mcallester.github.io/ttic-31230/01intro/history.pdf"> Slides</a> </td>
+	  <td align="left" style="padding:10pt"> <a href="https://www.youtube.com/watch?v=rBuePohZxPE"> Lecture 1 </a> </td>
+	</tr>
+
+	
+	<tr> 
+	</tr><tr> <td width="300" align="left" style="padding:10pt">The Fundamental Equations of Deep Learning </td>
+	  <td align="left" style="padding:10pt"> <a data-savepage-href="01intro/fundamentals.pdf" href="https://mcallester.github.io/ttic-31230/01intro/fundamentals.pdf">  Slides</a> </td>
+	  <td align="left" style="padding:10pt"> <a href="https://www.youtube.com/watch?v=61Nr7x_PK6o&list=PLVYTJAasVdWwqIOgf-Lz7GPAgoKBADNyi&index=3"> Video</a></td>
+	</tr>
+
+	<tr> <td width="300" align="left" style="padding:10pt"> <a data-savepage-href="01intro/problems.pdf" href="https://mcallester.github.io/ttic-31230/01intro/problems.pdf"> Problems</a></td>
+	</tr>
+
+	<tr> <td width="300" align="left" style="padding:10pt"> <a data-savepage-href="01intro/solutions.pdf" href="https://mcallester.github.io/ttic-31230/01intro/solutions.pdf"> Solutions</a></td>
+	</tr>
+
+    </tbody></table></p>
+
+  </li>
+  
+  
+  <li data-qb-rot="6e77c2c9-7cb0-49dd-8bb9-fa6601f7bdcd" data-qb-rot-theme="green"> <p><b> Frameworks and Back-Propagation:</b> </p>
+
+    <p> <table>
+
+	
+	<tbody><tr> <td width="300" align="left" style="padding:10pt"> Deep Learning Frameworks </td>
+	  <td align="left" style="padding:10pt"> <a data-savepage-href="02MLP/frameworks.pdf" href="https://mcallester.github.io/ttic-31230/02MLP/frameworks.pdf"> Slides </a>
+	  </td> <td align="left" style="padding:10pt"> <a href="https://www.youtube.com/watch?v=ImdZwPh3chU&list=PLVYTJAasVdWwqIOgf-Lz7GPAgoKBADNyi&index=5"> Video </a> </td>
+	</tr>
+	
+	<tr> <td width="300" align="left" style="padding:10pt"> Backpropagation for Scalar Source Code </td>
+	  <td align="left" style="padding:10pt"> <a data-savepage-href="02MLP/Backprop.pdf" href="https://mcallester.github.io/ttic-31230/02MLP/Backprop.pdf"> Slides </a> </td>
+	  <td align="left" style="padding:10pt"> <a href="https://www.youtube.com/watch?v=C7NpTYGcJVA&list=PLVYTJAasVdWwqIOgf-Lz7GPAgoKBADNyi&index=6"> Video </a> </td>
+	</tr>
+
+	<tr> <td width="300" align="left" style="padding:10pt"> Framework Objects and Backpropagation for Tensor Source Code </td>
+	  <td align="left" style="padding:10pt"> <a data-savepage-href="02MLP/backprop2.pdf" href="https://mcallester.github.io/ttic-31230/02MLP/backprop2.pdf"> Slides </a> </td>
+	  <td align="left" style="padding:10pt"> <a href="https://www.youtube.com/watch?v=ck6p7tVd4eY&list=PLVYTJAasVdWwqIOgf-Lz7GPAgoKBADNyi&index=7"> Video </a> </td>
+	</tr>
+	
+	<tr> <td width="300" align="left" style="padding:10pt">  Minibatching: The Batch Index </td>
+	  <td align="left" style="padding:10pt"> <a data-savepage-href="02MLP/minibatching.pdf" href="https://mcallester.github.io/ttic-31230/02MLP/minibatching.pdf"> Slides </a> </td>
+	  <td align="left" style="padding:10pt"> <a href="https://www.youtube.com/watch?v=iux5Gp7NWBM&list=PLVYTJAasVdWwqIOgf-Lz7GPAgoKBADNyi&index=9"> Video </a> </td>
+	</tr>
+	
+	<tr> <td width="300" align="left" style="padding:10pt">  The Educational Framework (EDF) </td>
+	  <td align="left" style="padding:10pt"> <a data-savepage-href="02MLP/EDFslides.pdf" href="https://mcallester.github.io/ttic-31230/02MLP/EDFslides.pdf"> Slides</a></td>
+	  <td align="left" style="padding:10pt"> <a href="https://www.youtube.com/watch?v=A5KnZkensgE&list=PLVYTJAasVdWwqIOgf-Lz7GPAgoKBADNyi&index=8"> Video </a> </td>
+	</tr>
+        
+	<tr> <td width="300" align="left" style="padding:10pt"> <a data-savepage-href="PS1/PS1.zip" href="https://mcallester.github.io/ttic-31230/PS1/PS1.zip"> EDF and the MNIST Coding Problem</a></td>
+	</tr>
+	
+	<tr> <td width="300" align="left" style="padding:10pt"> <a href="https://pytorch.org/tutorials"> PyTorch  tutorial</a></td></tr>
+
+	<tr> <td width="300" align="left" style="padding:10pt"> <a data-savepage-href="02MLP/problems.pdf" href="https://mcallester.github.io/ttic-31230/02MLP/problems.pdf"> Problems</a></td>
+	</tr>
+
+	<tr> <td width="300" align="left" style="padding:10pt"> <a data-savepage-href="02MLP/solutions.pdf" href="https://mcallester.github.io/ttic-31230/02MLP/solutions.pdf"> Solutions</a></td>
+	</tr>
+	
+
+    </tbody></table></p>
+  </li>
+    
+  <li><b> Einstein Notation and Convolutional Neural Networks (CNNs):</b> 
+
+  <p> <table>
+
+      <tbody><tr> <td width="300" align="left" style="padding:10pt"> <a data-savepage-href="03CNNs/CNNs.pdf" href="https://mcallester.github.io/ttic-31230/03CNNs/CNNs.pdf"> Slides  </a> </td>
+	<td align="left" style="padding:10pt"> <a href="https://youtu.be/6Ke-2Yv-YVo"> Lecture 3</a></td>
+      </tr>
+      
+
+      <tr> <td width="300" align="left" style="padding:10pt"><a href="https://pytorch.org/docs/stable/nn.functional.html?highlight=convolution"> Pytorch Convolution Functions</a></td>
+      </tr>
+
+
+      <tr> <td width="300" align="left" style="padding:10pt"> <a data-savepage-href="03CNNs/problems.pdf" href="https://mcallester.github.io/ttic-31230/03CNNs/problems.pdf"> Problems</a></td>
+      </tr>
+
+      <tr> <td width="300" align="left" style="padding:10pt"> <a data-savepage-href="03CNNs/solutions.pdf" href="https://mcallester.github.io/ttic-31230/03CNNs/solutions.pdf"> Solutions</a></td>
+      </tr>
+
+  </tbody></table></p>
+  </li>
+
+
+  <li>
+  <p> <b> Initialization, Normalization and Residual Connections:</b> </p>
+    
+  <p> <table>
+	
+      <tbody><tr>
+	<td align="left" style="padding:10pt"> <a data-savepage-href="04Highway/highway.pdf" href="https://mcallester.github.io/ttic-31230/04Highway/highway.pdf"> Slides  </a> </td>
+	<td align="left" style="padding:10pt"> <a href="https://www.youtube.com/watch?v=q5XUXZ0K4m8"> Lecture 4 </a> </td>
+      </tr>
+      
+      <tr> <td width="300" align="left" style="padding:10pt"><a data-savepage-href="04Highway/problems.pdf" href="https://mcallester.github.io/ttic-31230/04Highway/problems.pdf">Problems</a></td>
+      </tr>
+
+      <tr> <td width="300" align="left" style="padding:10pt"><a data-savepage-href="04Highway/problemssol.pdf" href="https://mcallester.github.io/ttic-31230/04Highway/problemssol.pdf">Solutions</a></td>
+      </tr>
+
+    </tbody></table></p>
+  </li>
+
+
+  
+  <li> <p> <b> Language Modeling, Machine Translation, RNNs, and the Transformer:</b> </p>
+    
+    <p> <table>
+
+      
+      <tbody><tr>
+	<td align="left" style="padding:10pt"> <a data-savepage-href="05RNNs/LangModels.pdf" href="https://mcallester.github.io/ttic-31230/05RNNs/LangModels.pdf"> Slides </a> </td>
+	<td align="left" style="padding:10pt"> <a href="https://www.youtube.com/watch?v=PlzNrWgFY2Q"> Lecture 5 </a> </td>
+      </tr>
+	
+	<tr> <td width="300" align="left" style="padding:10pt"><a data-savepage-href="05RNNs/problems.pdf" href="https://mcallester.github.io/ttic-31230/05RNNs/problems.pdf"> Problems</a></td>
+	</tr>
+	<tr> <td width="300" align="left" style="padding:10pt"><a data-savepage-href="05RNNs/problemssol.pdf" href="https://mcallester.github.io/ttic-31230/05RNNs/problemssol.pdf"> Solutions</a></td>
+	</tr>
+
+	</tbody></table>
+    </p>
+  </li>
+  
+    
+    
+  <li> <p><b> SGD I: Temperature, Batch Size, Momentum and Adam</b> </p>
+
+    <p> <table>
+	
+	<tbody><tr>
+	  <td align="left" style="padding:10pt"> <a data-savepage-href="06SGD/SGD.pdf" href="https://mcallester.github.io/ttic-31230/06SGD/SGD.pdf"> Slides </a> </td>
+	  <td align="left" style="padding:10pt"> <a href="https://youtube.com/watch?v=_UNvsa0orCo"> Lectuer 6 </a> </td>
+	</tr>
+
+	<tr> <td width="300" align="left" style="padding:10pt"> <a data-savepage-href="06SGD/bar.pdf" href="https://mcallester.github.io/ttic-31230/06SGD/bar.pdf"> Problems</a></td>
+	</tr>
+
+	<tr> <td width="300" align="left" style="padding:10pt"> <a data-savepage-href="06SGD/SGDSolutions.pdf" href="https://mcallester.github.io/ttic-31230/06SGD/SGDSolutions.pdf"> Solutions</a></td>
+	</tr>
+
+	
+    </tbody></table> </p>
+
+  </li>
+  
+
+
+  <li> <b> SGD II:  Gradient Flow, Langevin Dynamics and The SGD SDE</b>
+    <p> <table>
+
+	<tbody><tr>
+	  <td width="300" align="left" style="padding:10pt"> <a data-savepage-href="06SGD/Langevin.pdf" href="https://mcallester.github.io/ttic-31230/06SGD/Langevin.pdf"> Slides </a> </td>
+	  <td align="left" style="padding:10pt"> <a href="https://www.youtube.com/watch?v=MPgmpxb8sYc"> Lectuer 7 </a> </td>
+	</tr>
+	
+
+	<tr> <td width="300" align="left" style="padding:10pt"> <a data-savepage-href="06SGD/foo.pdf" href="https://mcallester.github.io/ttic-31230/06SGD/foo.pdf"> Problems</a></td>
+	</tr>
+
+    </tbody></table> </p>
+  </li>
+
+  <li>
+    <p> <b> Information and Generalization</b> </p>
+    <p> <table>
+
+	<tbody><tr>
+	  <td width="300" align="left" style="padding:10pt">Information Theory <a data-savepage-href="information/infotheory.pdf" href="https://mcallester.github.io/ttic-31230/information/infotheory.pdf">  Slides</a> </td>
+	  <td align="left" style="padding:10pt"> <a href="https://www.youtube.com/watch?v=1hTyUBrtj0Y"> Lectuer 8a </a> </td>
+	</tr>
+
+
+	<tr> <td align="left" style="padding:10pt"><a data-savepage-href="information/problems.pdf" href="https://mcallester.github.io/ttic-31230/information/problems.pdf">Problems</a></td></tr>
+
+	<tr> <td align="left" style="padding:10pt"><a data-savepage-href="information/problemsol.pdf" href="https://mcallester.github.io/ttic-31230/information/problemsol.pdf">Solutions</a></td></tr>
+
+	<tr>
+	  <td width="300" align="left" style="padding:10pt">Generalization Theory <a data-savepage-href="07regularization/PACBayes.pdf" href="https://mcallester.github.io/ttic-31230/07regularization/PACBayes.pdf"> Slides </a> </td>
+	  <td align="left" style="padding:10pt"> <a href="https://youtube.com/watch?v=j7RhUD3-kE4"> Lectuer 8b </a> </td>
+	</tr>
+
+      <tr> <td width="300" align="left" style="padding:10pt"> <a data-savepage-href="07regularization/REGproblems.pdf" href="https://mcallester.github.io/ttic-31230/07regularization/REGproblems.pdf"> Problems</a></td>
+      </tr>
+
+      <tr> <td width="300" align="left" style="padding:10pt"> <a data-savepage-href="07regularization/REGsolutions.pdf" href="https://mcallester.github.io/ttic-31230/07regularization/REGsolutions.pdf"> Solutions</a></td>
+      </tr>
+
+    </tbody></table>
+    </p>
+  </li>
+  
+  <li><b> Generative Adversarial Networks (GANs):</b>
+    
+    <p> <table>
+
+	
+	<tbody><tr>
+	  <td width="300" align="left" style="padding:10pt"> <a data-savepage-href="14GANs/Gans.pdf" href="https://mcallester.github.io/ttic-31230/14GANs/Gans.pdf"> Slides </a> </td>
+	  <td align="left" style="padding:10pt"> <a href="https://www.youtube.com/watch?v=T0QiKZMsPOA"> Lecture 9 </a> </td>
+	</tr>	
+	
+
+	<tr> <td width="300" align="left" style="padding:10pt"> <a href="https://www.youtube.com/watch?v=BIZg_PPuj_0"> SytleGAN2 YouTube1</a> </td>
+	</tr>
+
+	<tr> <td width="300" align="left" style="padding:10pt"> <a href="https://www.youtube.com/watch?v=9QuDh3W3lOY"> SytleGAN2 YouTube2</a> </td>
+	</tr>
+
+	<tr> <td width="300" align="left" style="padding:10pt"> <a href="https://arxiv.org/abs/1912.04958v2"> SytleGAN2 Paper</a> </td>
+	</tr>
+
+	<tr> <td width="300" align="left" style="padding:10pt"> <a data-savepage-href="14GANs/GANproblems.pdf" href="https://mcallester.github.io/ttic-31230/14GANs/GANproblems.pdf"> Problems</a></td>
+	</tr>
+
+	<tr> <td width="300" align="left" style="padding:10pt"> <a data-savepage-href="14GANs/GANSolutions.pdf" href="https://mcallester.github.io/ttic-31230/14GANs/GANSolutions.pdf"> Solutions</a></td>
+	</tr>
+
+
+    </tbody></table> </p>
+  </li>
+
+  <li> <p><b> Variational Autoencoders:</b> </p>
+    <p> <table>
+	
+	<tbody><tr>
+	   <td width="300" align="left" style="padding:10pt"> <a data-savepage-href="11AutoEncoders/ELBO.pdf" href="https://mcallester.github.io/ttic-31230/11AutoEncoders/ELBO.pdf"> Slides </a> </td>
+	  <td align="left" style="padding:10pt"> <a href="https://www.youtube.com/watch?v=RFA-3_xfX2Q"> Lecture 10 </a> </td>
+	</tr>	
+	
+	<tr> <td width="300" align="left" style="padding:10pt"> <a data-savepage-href="11AutoEncoders/Rateproblems.pdf" href="https://mcallester.github.io/ttic-31230/11AutoEncoders/Rateproblems.pdf"> Problems</a></td>
+	</tr>
+
+	<tr> <td width="300" align="left" style="padding:10pt"> <a data-savepage-href="11AutoEncoders/RateSolutions.pdf" href="https://mcallester.github.io/ttic-31230/11AutoEncoders/RateSolutions.pdf"> Solutions</a></td>
+	</tr>
+
+    </tbody></table> </p>
+  </li>
+
+  <li> <p><b> Vector Quantization and Multimodal Transformer Models</b> </p>
+    <p> <table>
+	
+	<tbody><tr> 
+	  <td width="300" align="left" style="padding:10pt"> <a data-savepage-href="pretraining/VQ.pdf" href="https://mcallester.github.io/ttic-31230/pretraining/VQ.pdf"> Slides </a>
+	  </td><td align="left" style="padding:10pt"> <a href="https://www.youtube.com/watch?v=1WPuke_lux4"> Lecture 14 </a> </td>
+	</tr>
+
+    </tbody></table></p>
+  </li>
+
+  
+  <li> <p><b> The Mathematics of Diffusion Models:</b> </p>
+
+      <p> <table>
+
+	<tbody><tr> 
+	  <td width="300" align="left" style="padding:10pt"> <a data-savepage-href="12Diffusion/diffusion.pdf" href="https://mcallester.github.io/ttic-31230/12Diffusion/diffusion.pdf"> Slides </a>
+	  </td><td align="left" style="padding:10pt"> <a href="https://www.youtube.com/watch?v=qba4afu5yS8"> Lecture 11 </a> </td>
+	</tr>
+
+	<tr> <td width="300" align="left" style="padding:10pt"> <a data-savepage-href="12Diffusion/problems.pdf" href="https://mcallester.github.io/ttic-31230/12Diffusion/problems.pdf"> Problems</a></td>
+	</tr>
+
+      </tbody></table> </p>
+  </li>
+
+      
+  <li> <p><b> The Practice of Diffusion Models:</b> </p>
+
+    
+      <p> <table>
+
+	<tbody><tr> 
+	  <td width="300" align="left" style="padding:10pt"> <a data-savepage-href="12Diffusion/diffcross.pdf" href="https://mcallester.github.io/ttic-31230/12Diffusion/diffcross.pdf"> Slides </a>
+	  </td><td align="left" style="padding:10pt"> <a href="https://www.youtube.com/watch?v=JiB-rdWW3co"> Lecture 12 </a> </td>
+	</tr>
+
+      </tbody></table> </p>
+
+  </li>
+
+  
+
+    <!---
+    <p><table>
+	<tr> <td align = "left" style = "padding:10pt"> <a href = https://arxiv.org/abs/physics/0004057> Tishby, Pereira and Bialek, The Information Bottleneck Method, 2000 </a></td>
+	</tr>
+
+	<tr> <td align = "left" style = "padding:10pt"> <a href = https://arxiv.org/abs/1802.07572> McAllester, Information Theoretic Co-Training, Feb, 2018 </a></td>
+	</tr>
+
+	<tr> <td align = "left" style = "padding:10pt"> <a href = https://arxiv.org/abs/1807.03748 > van den Oord et al., Contrastive Predictive Coding, July 2018</a></td>
+	</tr>
+
+	<tr> <td align = "left" style = "padding:10pt"> <a href = https://arxiv.org/abs/1811.04251 > McAllester and Stratos, Formal Limitations on the Measurement of Mutual Information, Nov. 2018  </a></td>
+	</tr>
+
+	<tr> <td align = "left" style = "padding:10pt"> <a href = https://arxiv.org/abs/1904.05862 > Schneider et al., wav2vec: Unsupervised Pre-training for Speech Recognition, April 2019</a></td>
+	</tr>
+
+	<tr> <td align = "left" style = "padding:10pt"> <a href = https://arxiv.org/abs/1905.06922> Poole et al., On Variational Bounds of Mutual Information, May 2019</a></td>
+	</tr>
+	
+	<tr> <td align = "left" style = "padding:10pt"> <a href = https://arxiv.org/abs/2002.05709> Chen et al., A Simple Framework for Contrastive Learning of Visual Representations, Feb. 2020</a></td>
+	</tr>
+
+	<tr> <td align = "left" style = "padding:10pt"> <a href = https://arxiv.org/abs/2006.09882> Caron et al. Unsupervised Learning of Visual Features by Contrasting Cluster Assignments, Jan. 2021</a></td>
+	</tr>
+
+      </table></p>
+    /--->
+
+    <li> <p><b> Mutual Information Coding</b> </p>
+    <p> <table>
+	
+	<tbody><tr> 
+	  <td width="300" align="left" style="padding:10pt"> <a data-savepage-href="pretraining/MI.pdf" href="https://mcallester.github.io/ttic-31230/pretraining/MI.pdf"> Slides </a>
+	  </td><td align="left" style="padding:10pt"> <a href="https://www.youtube.com/watch?v=cSad7S4fncw"> Lecture 13 </a> </td>
+	</tr>
+
+	<tr> <td width="300" align="left" style="padding:10pt"> <a data-savepage-href="pretraining/CONproblems.pdf" href="https://mcallester.github.io/ttic-31230/pretraining/CONproblems.pdf"> Problems</a></td>
+	</tr>
+
+	<tr> <td width="300" align="left" style="padding:10pt"> <a data-savepage-href="pretraining/CONSolutions.pdf" href="https://mcallester.github.io/ttic-31230/pretraining/CONSolutions.pdf"> Solutions</a></td>
+	</tr>
+
+    </tbody></table></p>
+  </li>
+
+
+  <li> <p> <b>  Reinforcement Learning (RL):</b> </p>
+    <p> <table>
+
+	<tbody><tr> <td width="300" align="left" style="padding:10pt">  </td>
+	  <td align="left" style="padding:10pt"> <a data-savepage-href="15RL/RL.pdf" href="https://mcallester.github.io/ttic-31230/15RL/RL.pdf"> Slides </a> </td>
+	</tr>
+
+	<tr> <td width="300" align="left" style="padding:10pt"> <a data-savepage-href="15RL/RLproblems.pdf" href="https://mcallester.github.io/ttic-31230/15RL/RLproblems.pdf"> Problems</a></td>
+	</tr>
+	
+	<tr> <td width="300" align="left" style="padding:10pt"> <a data-savepage-href="15RL/RLSolutions.pdf" href="https://mcallester.github.io/ttic-31230/15RL/RLSolutions.pdf"> Solutions</a></td>
+	</tr>
+
+    </tbody></table> </p>
+  </li>
+
+
+    
+  <li><b>  AlphaZero, muZero and AlphaStar:</b>
+    
+    <p> <table>
+	
+	<tbody><tr> <td width="300" align="left" style="padding:10pt"> </td>
+	  <td align="left" style="padding:10pt"> <a data-savepage-href="16alpha/alphago.pdf" href="https://mcallester.github.io/ttic-31230/16alpha/alphago.pdf"> Slides </a> </td>
+	</tr>
+
+    </tbody></table> </p>
+  </li>
+
+<li><b>  The Game of Diplomacy</b>
+    
+    <p> <table>
+	
+	<tbody><tr> <td width="300" align="left" style="padding:10pt"> </td>
+	  <td align="left" style="padding:10pt"> <a data-savepage-href="Diplomacy/Diplomacy.pdf" href="https://mcallester.github.io/ttic-31230/Diplomacy/Diplomacy.pdf"> Slides </a> </td>
+	</tr>
+
+    </tbody></table> </p>
+  </li>
+
+  <li> <p> <b> Theorem Proving:</b> </p>
+    <p> <table>
+	
+	<tbody><tr> <td width="300" align="left" style="padding:10pt"> </td>
+	  <td align="left" style="padding:10pt"> <a data-savepage-href="TheoremProving/proving.pdf" href="https://mcallester.github.io/ttic-31230/TheoremProving/proving.pdf"> Slides </a> </td>
+	</tr>
+
+    </tbody></table> </p>
+  </li>
+
+  <li> <p> <b> The Foundations of Mathematics:</b> </p>
+    <p> <table>
+	
+	<tbody><tr> <td width="300" align="left" style="padding:10pt"> </td>
+	  <td align="left" style="padding:10pt"> <a data-savepage-href="Logic/Logic.pdf" href="https://mcallester.github.io/ttic-31230/Logic/Logic.pdf"> Slides </a> </td>
+	</tr>
+
+    </tbody></table> </p>
+  </li>
+
+  <li> <p> <b> AI Safety:</b> </p>
+    <p> <table>
+	
+	<tbody><tr> <td width="300" align="left" style="padding:10pt"> </td>
+	  <td align="left" style="padding:10pt"> <a data-savepage-href="safety/safety.pdf" href="https://mcallester.github.io/ttic-31230/safety/safety.pdf"> Slides </a> </td>
+	</tr>
+
+    </tbody></table> </p>
+  </li>
+
+</ol>
+
+
+
+
+
+
+</body><grammarly-desktop-integration data-grammarly-shadow-root="true" style="visibility: visible !important;"><template data-savepage-shadowroot=""><style>
+      div.grammarly-desktop-integration {
+        position: absolute;
+        width: 1px;
+        height: 1px;
+        padding: 0;
+        margin: -1px;
+        overflow: hidden;
+        clip: rect(0, 0, 0, 0);
+        white-space: nowrap;
+        border: 0;
+        -moz-user-select: none;
+        -webkit-user-select: none;
+        -ms-user-select:none;
+        user-select:none;
+      }
+
+      div.grammarly-desktop-integration:before {
+        content: attr(data-content);
+      }
+    </style><div aria-label="grammarly-integration" role="group" tabindex="-1" class="grammarly-desktop-integration" data-content="{&quot;mode&quot;:&quot;full&quot;,&quot;isActive&quot;:true,&quot;isUserDisabled&quot;:false}"></div></template></grammarly-desktop-integration></html>
