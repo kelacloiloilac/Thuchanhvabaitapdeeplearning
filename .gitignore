@@ -1,0 +1,41 @@
+
+# Python environments
+**/.venv/
+**/venv/
+**/env/
+**/site-packages/
+
+# Python cache
+**/__pycache__/
+*.py[cod]
+*.pyo
+*.egg-info/
+
+# Jupyter
+.ipynb_checkpoints/
+
+# IDE
+.vscode/
+.idea/
+
+# Model checkpoints
+*.pth
+*.pt
+*.ckpt
+*.h5
+*.keras
+*.onnx
+*.safetensors
+
+# Large data and training artifacts
+**/archive/
+**/checkpoints/
+**/runs/
+**/wandb/
+*.npy
+*.npz
+
+# Temporary files
+*.tmp
+*.log
+.DS_Store
