@@ -1,0 +1,7 @@
+﻿Thí nghiệm,Kiến trúc,Số tham số,Augmentation,Optimizer,LR,Scheduler,Weight decay,Label smoothing,Class weights,Epochs,Best epoch,Train acc @best,Val loss @best,Val acc (PublicTest),Test acc (PrivateTest),Thời gian (phút)
+E1_small_noaug,small,615399,không,adam,0.001,none,0.0,0.0,none,20,19,0.5286,1.1531,0.5637,0.5598,1.1
+E2_small_aug,small,615399,có,adam,0.001,none,0.0,0.0,none,25,25,0.4809,1.1772,0.5414,0.5561,2.3
+E3_small_aug_onecycle,small,615399,có,adam,0.003,cosine,0.0,0.0,none,25,23,0.5264,1.1101,0.5653,0.5882,2.3
+E4_small_nobn_aug,small_nobn,615175,có,adam,0.001,none,0.0,0.0,none,25,21,0.5001,1.1378,0.5659,0.5726,2.2
+E5_small_sgd_onecycle,small,615399,có,sgd,0.05,cosine,0.0005,0.0,none,25,24,0.5296,1.1007,0.5748,0.5929,2.4
+E6_medium_aug_onecycle,medium,1459719,có,adam,0.003,cosine,0.0,0.1,none,30,29,0.6279,0.9893,0.6375,0.6395,4.8
