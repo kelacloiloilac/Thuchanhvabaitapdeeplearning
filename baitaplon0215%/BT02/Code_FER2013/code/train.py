@@ -20,6 +20,8 @@ def parse_args(argv=None):
     p.add_argument('--bs', type=int, default=64)
     p.add_argument('--wd', type=float, default=0.0)
     p.add_argument('--ls', type=float, default=0.0, help='label smoothing')
+    p.add_argument('--class-weights', default='none', choices=['none', 'sqrt', 'inverse'],
+                   help='cân bằng lớp: none | sqrt | inverse')
     p.add_argument('--data', default=DATA_NPZ)
     p.add_argument('--out', default=RUNS_DIR)
     p.add_argument('--seed', type=int, default=0)
@@ -31,7 +33,7 @@ def main(argv=None):
     a = parse_args(argv)
     run_experiment(name=a.name, arch=a.arch, aug=a.aug, epochs=a.epochs, lr=a.lr, opt=a.opt,
                    sched=a.sched, bs=a.bs, wd=a.wd, ls=a.ls, data=a.data, out=a.out, seed=a.seed,
-                   device=a.device)
+                   device=a.device, class_weights=a.class_weights)
 
 
 if __name__ == '__main__':

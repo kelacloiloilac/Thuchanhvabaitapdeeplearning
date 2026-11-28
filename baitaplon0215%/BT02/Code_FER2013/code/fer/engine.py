@@ -40,8 +40,11 @@ def predict(model, X, bs=512, device=None):
     return torch.cat(out)
 
 
-def train_one_epoch(model, opt, sched, X, y, bs, do_aug, ls, device=None):
+def train_one_epoch(model, opt, sched, X, y, bs, do_aug, ls, device=None, class_weights=None):
     model.train()
+    weight = class_weights
+    if weight is not None and device is not None:
+        weight = weight.to(device)
     perm = torch.randperm(len(X))
     tl = tc = 0
     for i in range(0, len(X), bs):
@@ -53,7 +56,7 @@ def train_one_epoch(model, opt, sched, X, y, bs, do_aug, ls, device=None):
             x = augment(x)
         opt.zero_grad()
         out = model(x)
-        loss = F.cross_entropy(out, yb, label_smoothing=ls)
+        loss = F.cross_entropy(out, yb, weight=weight, label_smoothing=ls)
         loss.backward()
         opt.step()
         if sched:
@@ -70,12 +73,14 @@ def evaluate(model, X, y, device=None):
     return loss, acc
 
 
-def fit(model, opt, sched, Xtr, ytr, Xva, yva, epochs, bs, do_aug, ls, tag, device=None, t0=None, log=print):
+def fit(model, opt, sched, Xtr, ytr, Xva, yva, epochs, bs, do_aug, ls, tag,
+        device=None, class_weights=None, t0=None, log=print):
     if t0 is None:
         t0 = time.time()
     hist, best = [], dict(val_acc=0, epoch=-1)
     for ep in range(epochs):
-        train_loss, train_acc = train_one_epoch(model, opt, sched, Xtr, ytr, bs, do_aug, ls, device=device)
+        train_loss, train_acc = train_one_epoch(model, opt, sched, Xtr, ytr, bs, do_aug, ls,
+                                                device=device, class_weights=class_weights)
         val_loss, val_acc = evaluate(model, Xva, yva, device=device)
         r = dict(epoch=ep + 1, train_loss=train_loss, train_acc=train_acc, val_loss=val_loss, val_acc=val_acc,
                  lr=opt.param_groups[0]['lr'], elapsed_min=(time.time() - t0) / 60)
