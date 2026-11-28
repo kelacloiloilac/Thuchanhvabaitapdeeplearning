@@ -1,0 +1,4 @@
+numpy
+torch>=1.10
+scikit-learn
+matplotlib
